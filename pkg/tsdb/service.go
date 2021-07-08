@@ -15,6 +15,7 @@ import (
 	"github.com/grafana/grafana/pkg/tsdb/cloudmonitoring"
 	"github.com/grafana/grafana/pkg/tsdb/elasticsearch"
 	"github.com/grafana/grafana/pkg/tsdb/graphite"
+	"github.com/grafana/grafana/pkg/tsdb/influxdb"
 	"github.com/grafana/grafana/pkg/tsdb/loki"
 	"github.com/grafana/grafana/pkg/tsdb/mssql"
 	"github.com/grafana/grafana/pkg/tsdb/mysql"
@@ -45,6 +46,7 @@ type Service struct {
 	PostgresService        *postgres.PostgresService `inject:""`
 	CloudMonitoringService *cloudmonitoring.Service  `inject:""`
 	AzureMonitorService    *azuremonitor.Service     `inject:""`
+	InfluxDBService        *influxdb.Service         `inject:""`
 	PluginManager          plugins.Manager           `inject:""`
 	BackendPluginManager   backendplugin.Manager     `inject:""`
 	HTTPClientProvider     httpclient.Provider       `inject:""`
