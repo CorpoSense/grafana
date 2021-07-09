@@ -12,5 +12,5 @@ tasks:
     init: |
       yarn install --pure-lockfile
       yarn start
-    command:
+  - command:
       make run
