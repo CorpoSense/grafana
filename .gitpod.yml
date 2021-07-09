@@ -1,0 +1,16 @@
+ports:
+- port: 3000 # Grafana
+  onOpen: open-browser
+
+tasks:
+  - name: test-grafana
+    before:
+      yarn test --all
+      go test -v ./pkg/...
+
+  - name: build-grafana
+    init: >-
+      yarn install --pure-lockfile
+      yarn start
+    command:
+      make run
