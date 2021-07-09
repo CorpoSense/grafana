@@ -4,12 +4,12 @@ ports:
 
 tasks:
   - name: test-grafana
-    before:
+    before: |
       yarn test --all
       go test -v ./pkg/...
 
   - name: build-grafana
-    init: >-
+    init: |
       yarn install --pure-lockfile
       yarn start
     command:
